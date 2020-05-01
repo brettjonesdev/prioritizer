@@ -1,0 +1,13 @@
+@import '../../../../styles/consts';
+
+.Repo {
+	.row {
+		display: flex;
+		flex-direction: row;
+
+		.Repos {
+			margin-right: $spacing * 2;
+			min-width: 200px;
+		}
+	}
+}

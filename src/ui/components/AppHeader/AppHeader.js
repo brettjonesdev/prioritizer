@@ -11,7 +11,9 @@ const AppHeader = () => {
   }
   return (
     <div className="AppHeader">
-      <div className="title">Prioritizer</div>
+      <div className="title">
+        <NavLink to="/">Prioritizer</NavLink>
+      </div>
       <div className="logout">
         <NavLink to="/" onClick={handleLogout}>
           Log out

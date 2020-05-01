@@ -1,0 +1,25 @@
+@import '../../../../../../styles/consts';
+
+.Issues {
+	margin: $spacing * 2;
+	.Issue {
+		td {
+			padding: $spacing;
+		}
+
+		.avatar {
+			padding: $spacing* 2;
+
+			img {
+				width: $spacing * 4;
+				height: $spacing * 4;
+				border-radius: 50%;
+			}
+		}
+
+		.handle {
+			cursor: grab;
+		}
+	}
+
+}

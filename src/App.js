@@ -7,6 +7,10 @@ import { useSelector } from 'react-redux'
 import LoggedIn from './ui/screens/LoggedIn'
 import AppHeader from './ui/components/AppHeader'
 import { BrowserRouter as Router } from 'react-router-dom'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fas)
 
 function App() {
   const apiKey = useSelector(selectApiKey)
@@ -14,10 +18,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div className="content">
-          <AppHeader />
-          {apiKey ? <LoggedIn /> : <EnterApiKey />}
-        </div>
+        <AppHeader />
+        <div className="content">{apiKey ? <LoggedIn /> : <EnterApiKey />}</div>
       </Router>
     </div>
   )
