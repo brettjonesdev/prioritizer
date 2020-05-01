@@ -23,7 +23,7 @@ export const apiKeySlice = createSlice({
 export const { setApiKey, unsetApiKey } = apiKeySlice.actions
 
 export const storeApiKey = (apiKey) => {
-  getLocal(apiKey)
+  setLocal(apiKey)
   return setApiKey(apiKey)
 }
 export const clearApiKey = () => {
