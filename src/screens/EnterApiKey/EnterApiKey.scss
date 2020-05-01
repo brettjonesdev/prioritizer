@@ -1,0 +1,20 @@
+@import '../../styles/consts';
+
+.EnterApiKey {
+  text-align: left;
+
+  .flex-row {
+	margin-top: $spacing;
+	.api-key {
+	  flex-grow: 3;
+	  flex-shrink: 1;
+	  font-size: 1.0em;
+	  padding: $spacing - 1;
+	  height: 3 * $spacing;
+	}
+	.submit-button {
+	  flex-grow: 1;
+	  margin-left: $spacing;
+	}
+  }
+}
