@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { storeApiKey } from '../../state/slices/apiKey'
+import { storeApiKey } from '../../../state/slices/apiKey/apiKey'
 import './EnterApiKey.scss'
 
 const EnterApiKey = () => {

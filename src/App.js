@@ -1,19 +1,19 @@
 import React from 'react'
-import EnterApiKey from './screens/EnterApiKey'
+import EnterApiKey from './ui/screens/EnterApiKey'
 import './App.scss'
 import './styles/index.scss'
 import { selectApiKey } from './state/slices/apiKey'
 import { useSelector } from 'react-redux'
+import Repos from './ui/screens/Repos'
 
 function App() {
   const apiKey = useSelector(selectApiKey)
-  console.log(apiKey)
 
   return (
     <div className="App">
       <div className="content">
         <h1>Prioritizer</h1>
-        {apiKey ? <h1>Api Key: ${apiKey}</h1> : <EnterApiKey />}
+        {apiKey ? <Repos /> : <EnterApiKey />}
       </div>
     </div>
   )

@@ -1,0 +1,10 @@
+.Error {
+	display: flex;
+	flex-direction: row;
+	.icon {
+		flex-grow: 1;
+	}
+	.message {
+		flex-grow: 3;
+	}
+}

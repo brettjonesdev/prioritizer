@@ -1,9 +1,13 @@
 @import './colors.scss';
 @import './consts.scss';
 
-p {
+p, body, html {
   color: $fontColor;
   font-family: Roboto,sans-serif;
+}
+
+a {
+	color: $accentColor;
 }
 
 input[type=button], input[type=submit], input[type=reset], button {
