@@ -1,7 +1,8 @@
+@import './styles/consts';
 .App {
-  text-align: center;
-	.content {
-		max-width: 600px;
-		margin: 0px auto;
+  .content {
+		max-width: $maxWidth;
+		margin: 0 auto;
+		padding: $spacing;
 	}
 }

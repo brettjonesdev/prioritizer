@@ -4,17 +4,21 @@ import './App.scss'
 import './styles/index.scss'
 import { selectApiKey } from './state/slices/apiKey'
 import { useSelector } from 'react-redux'
-import Repos from './ui/screens/Repos'
+import LoggedIn from './ui/screens/LoggedIn'
+import AppHeader from './ui/components/AppHeader'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 function App() {
   const apiKey = useSelector(selectApiKey)
 
   return (
     <div className="App">
-      <div className="content">
-        <h1>Prioritizer</h1>
-        {apiKey ? <Repos /> : <EnterApiKey />}
-      </div>
+      <Router>
+        <div className="content">
+          <AppHeader />
+          {apiKey ? <LoggedIn /> : <EnterApiKey />}
+        </div>
+      </Router>
     </div>
   )
 }
