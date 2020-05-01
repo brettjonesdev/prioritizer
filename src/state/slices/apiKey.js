@@ -9,10 +9,7 @@ export const apiKeySlice = createSlice({
   name: 'apiKey',
   initialState,
   reducers: {
-    storeApiKey: (state, action) => {
-      console.log(action)
-      return action.payload
-    },
+    storeApiKey: (state, action = {}) => action.payload,
     clearApiKey: () => initialState,
   },
 })

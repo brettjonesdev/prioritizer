@@ -7,13 +7,12 @@ import { useSelector } from 'react-redux'
 
 function App() {
   const apiKey = useSelector(selectApiKey)
-  console.log(apiKey)
 
   return (
     <div className="App">
       <div className="content">
         <h1>Prioritizer</h1>
-        {apiKey ? <h1>Api Key: ${apiKey}</h1> : <EnterApiKey />}
+        {apiKey ? <h1>Api Key: {apiKey}</h1> : <EnterApiKey />}
       </div>
     </div>
   )
