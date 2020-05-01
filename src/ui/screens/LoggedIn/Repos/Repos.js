@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectApiKey } from '../../../state/slices/apiKey'
+import { selectApiKey } from '../../../../state/slices/apiKey'
 import { fetchRepos, selectRepos } from './reposSlice'
-import Loading from '../../components/Loading'
-import Error from '../../components/Error'
+import Loading from '../../../components/Loading'
+import Error from '../../../components/Error'
 import RepoItem from './RepoItem'
 import './Repos.scss'
 

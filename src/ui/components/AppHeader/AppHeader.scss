@@ -1,0 +1,17 @@
+@import '../../../styles/colors';
+@import '../../../styles/consts';
+
+.AppHeader {
+	display: flex;
+	flex-direction: row;
+	place-content: space-between;
+	height: 40px;
+	padding-top: $spacing;
+	padding-bottom: $spacing;
+	max-width: $maxWidth;
+
+	.title {
+		font-size: 2.0em;
+		color: $accentColor;
+	}
+}

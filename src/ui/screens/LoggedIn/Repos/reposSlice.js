@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import createClient from '../../../github/client'
+import createClient from '../../../../github/client'
 
 const initialState = {
   data: null,
