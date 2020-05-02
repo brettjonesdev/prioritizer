@@ -3,6 +3,8 @@ Routable's 2020 Frontend recruiting coding challenge.
 
 This repository contains a React/Redux application which allows a user to rank and prioritize Issues in a single GitHub repository. There is no backend persistence, the prioritization is merely saved to Local Storage.
 
+![demo](https://p91.f3.n0.cdn.getcloudapp.com/items/5zu1NrZ2/Screen%20Recording%202020-05-01%20at%2010.27%20PM.gif?v=d3773920ed101613851af2c599988635)
+
 I tried to work on this project the same way I would work on a production application with a team. You're welcome to view my PR history to see how I typically communicate my progress visually using GIFs and fairly descriptive PR messages.
 
 ## Backend Implementation
