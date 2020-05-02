@@ -1,13 +1,13 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Repos from './Repos'
 import Repo from './Repo'
+import ReposPage from './ReposPage'
 
 const LoggedIn = () => {
   return (
     <Switch>
-      <Route path="/" exact component={Repos} />
-      <Route path="/:id" component={Repo} />
+      <Route path="/" exact component={ReposPage} />
+      <Route path="/:owner/:repo" component={Repo} />
     </Switch>
   )
 }

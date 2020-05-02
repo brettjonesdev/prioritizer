@@ -7,13 +7,15 @@ import Error from '../../../components/Error'
 import RepoItem from './RepoItem'
 import './Repos.scss'
 
-const Repos = () => {
+const Repos = ({ currentRepoName }) => {
   const apiKey = useSelector(selectApiKey)
   const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(fetchRepos({ accessToken: apiKey }))
-  }, [apiKey, dispatch])
   const { data, loading, error } = useSelector(selectRepos)
+  useEffect(() => {
+    if (!data) {
+      dispatch(fetchRepos({ accessToken: apiKey }))
+    }
+  }, [apiKey, data, dispatch])
 
   if (loading) {
     return <Loading />
@@ -23,10 +25,13 @@ const Repos = () => {
   }
   return (
     <div className="Repos">
-      <h2>Repos</h2>
       <ul>
         {data.map((repo, index) => (
-          <RepoItem key={index} {...repo} />
+          <RepoItem
+            current={repo.name === currentRepoName}
+            key={index}
+            {...repo}
+          />
         ))}
       </ul>
     </div>

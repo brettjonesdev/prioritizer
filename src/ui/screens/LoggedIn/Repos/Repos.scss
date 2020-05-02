@@ -1,6 +1,13 @@
+@import '../../../../styles/consts';
+
 .Repos {
 	text-align: left;
-	.Repo-Item {
+	ul {
+		list-style: none;
+		padding: 0;
 
+		.RepoItem {
+			margin-top: $spacing /2;
+		}
 	}
 }

@@ -1,13 +1,22 @@
 import React from 'react'
 import Issues from './Issues'
 import { useParams } from 'react-router-dom'
+import Repos from '../Repos'
+import './Repo.scss'
 
 const Repo = () => {
-  const { id } = useParams()
+  const { owner, repo } = useParams()
+
   return (
     <div className="Repo">
-      Repository {id}
-      <Issues />
+      <div className="row">
+        <div className="sidebar">
+          <Repos currentRepoName={repo} />
+        </div>
+        <div className="container">
+          <Issues repo={repo} owner={owner} />
+        </div>
+      </div>
     </div>
   )
 }
