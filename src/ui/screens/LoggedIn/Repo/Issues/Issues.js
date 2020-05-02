@@ -4,8 +4,17 @@ import { selectApiKey } from '../../../../../state/slices/apiKey'
 import Loading from '../../../../components/Loading'
 import Error from '../../../../components/Error'
 import Issue from './Issue'
-import { clearIssues, fetchIssues, selectIssues } from './issuesSlice'
+import { clearIssues, fetchIssues, selectIssues } from './state/issuesSlice'
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
+import { selectPriorities, storePriorities } from './state/prioritiesSlice'
+
+function arrayMove(array, fromIndex, toIndex) {
+  const copy = [...array]
+  const element = copy[fromIndex]
+  copy.splice(fromIndex, 1)
+  copy.splice(toIndex, 0, element)
+  return copy
+}
 
 const Issues = ({ repo, owner }) => {
   const apiKey = useSelector(selectApiKey)
@@ -14,15 +23,26 @@ const Issues = ({ repo, owner }) => {
   useEffect(() => {
     dispatch(clearIssues())
   }, [dispatch, repo])
+
   useEffect(() => {
     if (!data) {
       dispatch(fetchIssues({ owner, repo, accessToken: apiKey }))
     }
   }, [apiKey, data, dispatch, owner, repo])
 
-  const onDragEnd = useCallback((...args) => {
-    console.log('drg end', ...args)
-  }, [])
+  const issueIds = useSelector(selectPriorities).repos[repo] || []
+
+  const onDragEnd = useCallback(
+    ({ source, destination }) => {
+      if (!destination) return
+      const newOrder = arrayMove(issueIds, source.index, destination.index)
+      dispatch(storePriorities({ repo, issueIds: newOrder }))
+    },
+    [dispatch, issueIds, repo]
+  )
+  const sortedIssues = issueIds
+    .map((id) => (data ? data.find((issue) => issue.id === id) : false))
+    .filter((issue) => !!issue)
 
   if (loading) {
     return <Loading />
@@ -49,26 +69,23 @@ const Issues = ({ repo, owner }) => {
               ref={droppableProvided.innerRef}
               {...droppableProvided.droppableProps}
             >
-              {data.map((issue, index) => (
+              {sortedIssues.map((issue, index) => (
                 <Draggable
                   key={issue.id}
                   draggableId={'' + issue.id}
                   index={index}
                 >
-                  {(draggableProvided) => (
-                    <React.Fragment>
-                      <Issue
-                        key={index}
-                        {...issue}
-                        provided={draggableProvided}
-                      />
-                      {/* Drop zones are on top of existing items, so we need one more
-                  			placeholder at the bottom, as there's no item there */}
-                      {draggableProvided.placeholder}
-                    </React.Fragment>
+                  {(draggableProvided, snapshot) => (
+                    <Issue
+                      key={index}
+                      {...issue}
+                      provided={draggableProvided}
+                      snapshot={snapshot}
+                    />
                   )}
                 </Draggable>
               ))}
+              {droppableProvided.placeholder}
             </tbody>
           )}
         </Droppable>

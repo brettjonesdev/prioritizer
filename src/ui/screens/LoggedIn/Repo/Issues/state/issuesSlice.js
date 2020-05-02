@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
-import createClient from '../../../../../github/client'
+import createClient from '../../../../../../github/client'
+import { updateWithIssues } from './prioritiesSlice'
 
 const initialState = {
   data: null,
@@ -39,8 +40,11 @@ export const fetchIssues = ({ owner, repo, accessToken }) => async (
   dispatch
 ) => {
   try {
+    dispatch(clearIssues())
     const client = createClient({ accessToken })
     const { data } = await client.get(`/repos/${owner}/${repo}/issues`)
+    const issueIds = data.map(({ id }) => id)
+    dispatch(updateWithIssues({ repo, issueIds }))
     dispatch(getIssuesSuccess(data))
   } catch (error) {
     console.error(error)

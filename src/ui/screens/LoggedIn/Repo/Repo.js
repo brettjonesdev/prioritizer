@@ -10,8 +10,12 @@ const Repo = () => {
   return (
     <div className="Repo">
       <div className="row">
-        <Repos currentRepoName={repo} />
-        <Issues repo={repo} owner={owner} />
+        <div className="sidebar">
+          <Repos currentRepoName={repo} />
+        </div>
+        <div className="container">
+          <Issues repo={repo} owner={owner} />
+        </div>
       </div>
     </div>
   )

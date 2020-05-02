@@ -1,23 +1,18 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import { clearApiKey } from '../../../state/slices/apiKey'
 import { NavLink } from 'react-router-dom'
 import './AppHeader.scss'
+import { destroySession } from '../../../app/store'
 
 const AppHeader = () => {
-  const dispatch = useDispatch()
-  const handleLogout = () => {
-    dispatch(clearApiKey())
-  }
   return (
     <div className="AppHeader">
       <div className="title">
         <NavLink to="/">Prioritizer</NavLink>
       </div>
       <div className="logout">
-        <NavLink to="/" onClick={handleLogout}>
+        <a href="/" onClick={destroySession}>
           Log out
-        </NavLink>
+        </a>
       </div>
     </div>
   )
