@@ -9,8 +9,8 @@ const initialState = {
 }
 
 /**
- * The apiKey slice simply stores a GH Api Key and remembers it,
- * @type {Slice<unknown, {storeApiKey: (function(*, *): any), clearApiKey: (function(*): *)}, string>}
+ * The issues slice stores an array of GitHub Issues for a given repository
+ * @type {Slice<{data: null, loading: boolean, error: boolean}, {clearIssues: (function(*): {data: null, loading: boolean, error: boolean}), getIssuesFailure: issuesSlice.reducers.getIssuesFailure, getIssuesSuccess: issuesSlice.reducers.getIssuesSuccess}, string>}
  */
 export const issuesSlice = createSlice({
   name: 'issues',
@@ -36,6 +36,13 @@ export const {
   clearIssues,
 } = issuesSlice.actions
 
+/**
+ * Fetch an array of GitHub Issues for a single repository
+ * @param owner
+ * @param repo
+ * @param accessToken
+ * @return {function(...[*]=)}
+ */
 export const fetchIssues = ({ owner, repo, accessToken }) => async (
   dispatch
 ) => {

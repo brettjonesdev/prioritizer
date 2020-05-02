@@ -25,37 +25,60 @@ exports[`renders App snapshot 1`] = `
     className="content"
   >
     <form
+      className="EnterApiKey"
       onSubmit={[Function]}
     >
-      <div
-        className="EnterApiKey"
-      >
-        <div>
-          <label
-            htmlFor="apiKey"
-          >
-            Enter a valid GitHub Personal Access Token
-          </label>
-        </div>
-        <div
-          className="flex-row"
+      <div>
+        <label
+          htmlFor="apiKey"
         >
-          <input
-            className="api-key"
-            id="apiKey"
-            onChange={[Function]}
-            type="text"
-            value=""
-          />
-          <input
-            className="submit-button primary"
-            disabled={true}
-            type="submit"
-            value="Submit"
-          />
-        </div>
+          Enter a valid GitHub Personal Access Token
+        </label>
+      </div>
+      <div
+        className="flex-row"
+      >
+        <input
+          className="api-key"
+          id="apiKey"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+        <input
+          className="submit-button primary"
+          disabled={true}
+          type="submit"
+          value="Submit"
+        />
       </div>
     </form>
+  </div>
+  <div
+    className="AppFooter"
+  >
+    <span>
+      Made with 
+      <span
+        role="img"
+      >
+        ❤
+      </span>
+      ️ by
+       
+      <a
+        href="https://github.com/brettjonesdev"
+      >
+        Brett Jones
+      </a>
+      . View
+       
+      <a
+        href="https://github.com/brettjonesdev/prioritizer"
+      >
+        source code
+      </a>
+    </span>
   </div>
 </div>
 `;

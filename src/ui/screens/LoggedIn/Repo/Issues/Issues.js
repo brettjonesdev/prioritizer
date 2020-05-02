@@ -16,6 +16,13 @@ function arrayMove(array, fromIndex, toIndex) {
   return copy
 }
 
+/**
+ * A list of Issues for a GitHub Repo, drag and drop sortable
+ * @param repo
+ * @param owner
+ * @return {*}
+ * @constructor
+ */
 const Issues = ({ repo, owner }) => {
   const apiKey = useSelector(selectApiKey)
   const dispatch = useDispatch()

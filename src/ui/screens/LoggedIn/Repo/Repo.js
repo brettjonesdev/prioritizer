@@ -5,9 +5,13 @@ import Repos from '../Repos'
 import './Repo.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+/**
+ * Screen for a single GitHub Repo containing a list of Issues
+ * @return {*}
+ * @constructor
+ */
 const Repo = () => {
   const { owner, repo } = useParams()
-
   return (
     <div className="Repo">
       <div className="row">

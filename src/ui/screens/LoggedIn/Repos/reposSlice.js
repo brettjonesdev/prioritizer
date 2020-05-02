@@ -7,8 +7,8 @@ const initialState = {
   error: false,
 }
 /**
- * The apiKey slice simply stores a GH Api Key and remembers it,
- * @type {Slice<unknown, {storeApiKey: (function(*, *): any), clearApiKey: (function(*): *)}, string>}
+ * The repos slice stores an array of GitHub Repos
+ * @type {Slice<{data: null, loading: boolean, error: boolean}, {getReposSuccess: reposSlice.reducers.getReposSuccess, getReposFailure: reposSlice.reducers.getReposFailure}, string>}
  */
 export const reposSlice = createSlice({
   name: 'repos',
@@ -29,6 +29,11 @@ export const reposSlice = createSlice({
 
 export const { getReposSuccess, getReposFailure } = reposSlice.actions
 
+/**
+ * Fetch an array of Repos from GitHub and store them in the reposSlice
+ * @param accessToken
+ * @return {function(...[*]=)}
+ */
 export const fetchRepos = ({ accessToken }) => async (dispatch) => {
   try {
     const client = createClient({ accessToken })
