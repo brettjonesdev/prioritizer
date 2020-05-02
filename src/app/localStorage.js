@@ -1,4 +1,4 @@
-import { selectApiKey } from '../state/slices/apiKey'
+import { selectApiKey } from '../ui/screens/EnterApiKey/state'
 import { selectPriorities } from '../ui/screens/LoggedIn/Repo/Issues/state/prioritiesSlice'
 
 const LOCAL_STORAGE_KEY = 'prioritizer-api-key'

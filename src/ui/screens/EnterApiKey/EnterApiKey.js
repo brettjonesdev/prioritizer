@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { setApiKey as storeApiKey } from '../../../state/slices/apiKey'
+import { setApiKey as storeApiKey } from './state'
 import { useDispatch } from 'react-redux'
 import './EnterApiKey.scss'
 
@@ -20,7 +20,9 @@ const EnterApiKey = () => {
     <form onSubmit={onSubmit}>
       <div className="EnterApiKey">
         <div>
-          <label htmlFor="apiKey">Enter a valid GitHub API Key</label>
+          <label htmlFor="apiKey">
+            Enter a valid GitHub Personal Access Token
+          </label>
         </div>
         <div className="flex-row">
           <input
