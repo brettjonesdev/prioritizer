@@ -3,6 +3,7 @@
 .App {
   .content {
 		max-width: $maxWidth;
+		min-height: calc(100vh - 125px);
 		margin: 0 auto;
 		padding: $spacing;
 	}

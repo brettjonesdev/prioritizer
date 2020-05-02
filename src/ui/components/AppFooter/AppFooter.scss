@@ -1,0 +1,10 @@
+@import '../../../styles/colors';
+@import '../../../styles/consts';
+
+.AppFooter {
+	text-align: center;
+	padding: $spacing;
+	span {
+		color: lighten($fontColor, 20%);
+	}
+}

@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders App snapshot 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="AppHeader"
+  >
+    <div
+      className="title"
+    >
+      <a
+        aria-current="page"
+        className="active"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Prioritizer
+      </a>
+    </div>
+  </div>
+  <div
+    className="content"
+  >
+    <form
+      className="EnterApiKey"
+      onSubmit={[Function]}
+    >
+      <div>
+        <label
+          htmlFor="apiKey"
+        >
+          Enter a valid GitHub Personal Access Token
+        </label>
+      </div>
+      <div
+        className="flex-row"
+      >
+        <input
+          className="api-key"
+          id="apiKey"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+        <input
+          className="submit-button primary"
+          disabled={true}
+          type="submit"
+          value="Submit"
+        />
+      </div>
+    </form>
+  </div>
+  <div
+    className="AppFooter"
+  >
+    <span>
+      Made with 
+      <span
+        role="img"
+      >
+        ❤
+      </span>
+      ️ by
+       
+      <a
+        href="https://github.com/brettjonesdev"
+      >
+        Brett Jones
+      </a>
+      . View
+       
+      <a
+        href="https://github.com/brettjonesdev/prioritizer"
+      >
+        source code
+      </a>
+    </span>
+  </div>
+</div>
+`;

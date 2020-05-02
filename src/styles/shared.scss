@@ -2,8 +2,8 @@
 @import './consts.scss';
 
 p, body, html {
-  color: $fontColor;
-  font-family: Roboto,sans-serif;
+	color: $fontColor;
+	font-family: Roboto, sans-serif;
 }
 
 a {
@@ -11,22 +11,25 @@ a {
 }
 
 input[type=button], input[type=submit], input[type=reset], button {
-  padding: $spacing;
-  border-radius: $spacing / 2;
-  font-size: 1.0em;
+	padding: $spacing;
+	border-radius: $spacing / 2;
+	font-size: 1.0em;
+	font-weight: 500;
+	cursor: pointer;
 
-  &.primary {
-	color: $accentColor;
-	background-color: lighten($accentColor, 35%);
-	border-color: darken($accentColor, 10%);
-	&[disabled] {
-	  color: lighten($accentColor, 12%);
-	  border-color: lighten($accentColor, 10%);
+	&.primary {
+		color: darken($accentColor, 10%);
+		background-color: lighten($accentColor, 35%);
+		border-color: darken($accentColor, 10%);
+
+		&[disabled] {
+			color: lighten($accentColor, 12%);
+			border-color: lighten($accentColor, 10%);
+		}
 	}
-  }
 }
 
 .flex-row {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }

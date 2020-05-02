@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectApiKey } from '../../../../../state/slices/apiKey'
+import { selectApiKey } from '../../../EnterApiKey/state'
 import Loading from '../../../../components/Loading'
 import Error from '../../../../components/Error'
 import Issue from './Issue'
@@ -16,6 +16,13 @@ function arrayMove(array, fromIndex, toIndex) {
   return copy
 }
 
+/**
+ * A list of Issues for a GitHub Repo, drag and drop sortable
+ * @param repo
+ * @param owner
+ * @return {*}
+ * @constructor
+ */
 const Issues = ({ repo, owner }) => {
   const apiKey = useSelector(selectApiKey)
   const dispatch = useDispatch()
@@ -50,13 +57,16 @@ const Issues = ({ repo, owner }) => {
   if (error || !data) {
     return <Error message="Unable to load Issues" />
   }
+  if (!sortedIssues.length) {
+    return <div className="empty">No Issues found</div>
+  }
 
   return (
     <table className="Issues">
       <thead>
         <tr>
           <th></th>
-          <th></th>
+          <th className="issue-heading">Issue</th>
           <th>Created</th>
           <th>Updated</th>
           <th></th>

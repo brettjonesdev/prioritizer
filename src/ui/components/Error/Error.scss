@@ -1,9 +1,15 @@
+@import "../../../styles/consts";
+
 .Error {
 	display: flex;
 	flex-direction: row;
+	margin: $spacing;
+
 	.icon {
 		flex-grow: 1;
+		margin-right: $spacing;
 	}
+
 	.message {
 		flex-grow: 3;
 	}

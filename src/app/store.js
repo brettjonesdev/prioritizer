@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counter from '../features/counter/counterSlice'
-import apiKey from '../state/slices/apiKey'
+import apiKey from '../ui/screens/EnterApiKey/state'
 import repos from '../ui/screens/LoggedIn/Repos/reposSlice'
 import issues from '../ui/screens/LoggedIn/Repo/Issues/state/issuesSlice'
 import priorities from '../ui/screens/LoggedIn/Repo/Issues/state/prioritiesSlice'
@@ -10,7 +9,6 @@ const preloadedState = loadState() || {}
 const store = configureStore({
   preloadedState,
   reducer: {
-    counter,
     apiKey,
     repos,
     issues,
