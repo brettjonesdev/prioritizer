@@ -50,13 +50,16 @@ const Issues = ({ repo, owner }) => {
   if (error || !data) {
     return <Error message="Unable to load Issues" />
   }
+  if (!sortedIssues.length) {
+    return <div className="empty">No Issues found</div>
+  }
 
   return (
     <table className="Issues">
       <thead>
         <tr>
           <th></th>
-          <th></th>
+          <th className="issue-heading">Issue</th>
           <th>Created</th>
           <th>Updated</th>
           <th></th>

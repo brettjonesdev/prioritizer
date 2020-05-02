@@ -12,7 +12,7 @@ const Issue = ({
   provided,
 }) => {
   const dragStyle = snapshot.isDragging
-    ? { backgroundColor: '#ccc', display: 'table' }
+    ? { backgroundColor: '#eee', display: 'table' }
     : undefined
   const dragNDropProps = {
     ...provided.draggableProps,
@@ -30,7 +30,7 @@ const Issue = ({
       {...provided.dragHandleProps}
       style={style}
     >
-      <td style={{ width: '42px' }} className="handle">
+      <td style={{ width: '26px' }} className="handle">
         <FontAwesomeIcon icon="bars" />
       </td>
       <td>{title}</td>

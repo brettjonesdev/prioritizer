@@ -4,7 +4,13 @@
 	margin: $spacing * 2;
 	width: 100%;
 
+	.issue-heading {
+		text-align: left;
+		padding: $spacing;
+	}
+
 	.Issue {
+		border-radius: $spacing / 2;
 		td {
 			padding: $spacing;
 		}
@@ -21,7 +27,11 @@
 
 		.handle {
 			cursor: grab;
+			padding-right: 0;
 		}
 	}
+}
 
+.empty {
+	margin: $spacing;
 }

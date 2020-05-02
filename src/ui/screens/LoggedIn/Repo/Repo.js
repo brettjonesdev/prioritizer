@@ -10,6 +10,7 @@ const Repo = () => {
   return (
     <div className="Repo">
       <div className="row">
+        <h2 className="title">{repo}</h2>
         <div className="sidebar">
           <Repos currentRepoName={repo} />
         </div>
