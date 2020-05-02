@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders App snapshot 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="AppHeader"
+  >
+    <div
+      className="title"
+    >
+      <a
+        aria-current="page"
+        className="active"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Prioritizer
+      </a>
+    </div>
+    <div
+      className="logout"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        Log out
+      </a>
+    </div>
+  </div>
+  <div
+    className="content"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="EnterApiKey"
+      >
+        <div>
+          <label
+            htmlFor="apiKey"
+          >
+            Enter a valid GitHub Personal Access Token
+          </label>
+        </div>
+        <div
+          className="flex-row"
+        >
+          <input
+            className="api-key"
+            id="apiKey"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <input
+            className="submit-button primary"
+            disabled={true}
+            type="submit"
+            value="Submit"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;

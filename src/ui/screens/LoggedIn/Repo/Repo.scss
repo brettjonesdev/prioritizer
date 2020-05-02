@@ -41,6 +41,9 @@
 
 			.title {
 				display: block !important;
+				a {
+					margin-right: $spacing;
+				}
 			}
 		}
 	}

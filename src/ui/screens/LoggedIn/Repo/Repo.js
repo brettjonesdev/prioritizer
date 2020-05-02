@@ -1,8 +1,9 @@
 import React from 'react'
 import Issues from './Issues'
-import { useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import Repos from '../Repos'
 import './Repo.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Repo = () => {
   const { owner, repo } = useParams()
@@ -10,7 +11,12 @@ const Repo = () => {
   return (
     <div className="Repo">
       <div className="row">
-        <h2 className="title">{repo}</h2>
+        <h2 className="title">
+          <NavLink to="/">
+            <FontAwesomeIcon icon="arrow-left" />
+          </NavLink>
+          {repo}
+        </h2>
         <div className="sidebar">
           <Repos currentRepoName={repo} />
         </div>

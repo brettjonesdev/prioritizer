@@ -31,7 +31,7 @@ const Issue = ({
       style={style}
     >
       <td style={{ width: '26px' }} className="handle">
-        <FontAwesomeIcon icon="bars" />
+        <FontAwesomeIcon icon="bars" opacity={0.5} />
       </td>
       <td>{title}</td>
       <td style={{ width: '106px' }}>{moment(created_at).fromNow()}</td>
