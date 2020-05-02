@@ -20,16 +20,6 @@ exports[`renders App snapshot 1`] = `
         Prioritizer
       </a>
     </div>
-    <div
-      className="logout"
-    >
-      <a
-        href="/"
-        onClick={[Function]}
-      >
-        Log out
-      </a>
-    </div>
   </div>
   <div
     className="content"
